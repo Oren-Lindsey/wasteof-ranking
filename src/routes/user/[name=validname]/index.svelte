@@ -11,7 +11,7 @@
         <div>
             <h1 class="text-3xl">The user <a class="underline hover:text-indigo-500" href="{`https://beta.wasteof.money/@${name}`}">@{name}</a> is: {result}</h1>
             <p>{name} has {followers} followers</p>
-            <p>Their followers have an average follower count of {avg}, a difference of {#if avg > followers}-{diff}{:else}{diff}{/if}</p>
+            <p>Their followers have an average follower count of {avg}, a difference of {#if avg > followers}{diff}{:else}-{diff}{/if}</p>
         </div>
     </div>
     {:else if result == 'normal'}
@@ -27,7 +27,7 @@
         <div>
             <h1 class="text-3xl">The user <a class="underline hover:text-indigo-500" href="{`https://beta.wasteof.money/@${name}`}">@{name}</a> is: {result}</h1>
             <p>{name} has {followers} followers</p>
-            <p>Their followers have an average follower count of {avg}, a difference of {#if avg > followers}-{diff}{:else}{diff}{/if}</p>
+            <p>Their followers have an average follower count of {avg}, a difference of {#if avg > followers}{diff}{:else}-{diff}{/if}</p>
         </div>
     </div>
     {/if}
