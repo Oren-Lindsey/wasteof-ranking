@@ -64,7 +64,6 @@ async function getFollowers(name) {
     const user = await fetch(`https://beta.wasteof.money/users/${name}/followers/__data.json`)
     const userData = await user.json()
     const followers = userData.user.stats.followers
-    var quo = Math.floor(followers/15);
     const pages = followers%15
     for (let i = 0; i < pages; i++) {
         const res = await fetch(`https://beta.wasteof.money/users/${name}/followers/__data.json?page=${i}`)
@@ -76,9 +75,16 @@ async function getFollowers(name) {
     for (let i = 0; i < all.length; i++) {
         counts.push(all[i].stats.followers)
     }
-    const avg = Math.round(average(counts))
-    return {
-        average: avg,
-        followers: followers
+    if (counts.length > 0) {
+        const avg = Math.round(average(counts))
+        return {
+            average: avg,
+            followers: followers
+        }
+    } else {
+        return {
+            average: 0,
+            followers: followers
+        }
     }
 }
