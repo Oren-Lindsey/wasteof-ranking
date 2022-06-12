@@ -35,7 +35,7 @@ async function getAverage(name) {
                 name: name
             }
         }
-    } else if (data.average < 4) {
+    } else if (data.average < 4 && data.followers > 20) {
         return {
             body: {
                 result: 'botted?',
