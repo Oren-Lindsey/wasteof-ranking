@@ -5,7 +5,7 @@
     }
 </script>
 <div class="w-screen h-screen grid place-items-center bg-blue-400 text-white p-4">
-    <div>
+    <div class="max-w-lg break-words">
         <h1 class="text-3xl">wasteof.money ranking</h1>
         <p>Are you overrated or underrated on <a href="https://wasteof.money">wasteof.money</a>?</p>
         <form on:submit|preventDefault={redirect}>
@@ -13,5 +13,6 @@
             <input class="rounded p-1 border-black border text-black" id="username" placeholder="username" bind:value={name} />
             <button class="rounded bg-blue-600 p-1 hover:bg-blue-200 hover:text-black transition ease-in-out delay-75 text-white" type="submit">Go</button>
         </form>
+        <i class="text-gray-200">Disclaimer: please don't get mad at me for these results, I only wrote the code</i>
     </div>
 </div>
