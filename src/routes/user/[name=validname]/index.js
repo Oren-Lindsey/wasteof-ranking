@@ -1,7 +1,7 @@
 import WasteOfSession from 'wasteof-client'
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get(event) {
-    const name = await event.params.name;
+    const name = await event.params.name.toLowerCase();
     if (name !== 'jeffalo') {
         let wasteof = new WasteOfSession()
         const exists = await wasteof.checkUsername(name)
