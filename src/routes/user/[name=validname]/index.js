@@ -35,7 +35,17 @@ async function getAverage(name) {
                 name: name
             }
         }
-    } else if (data.followers > data.average) {
+    } else if (data.average < 4) {
+        return {
+            body: {
+                result: 'botted?',
+                avg: data.average,
+                followers: data.followers,
+                diff: diff,
+                name: name
+            }
+        }
+    } else if (data.followers > (data.average * 2) ) {
         return {
             body: {
                 result: 'overrated',
